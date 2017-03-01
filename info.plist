@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.ricardosampayo.sortedstrings</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>34CA95AC-40BB-4A08-AD5C-1E65C9912032</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A5CD6C9C-6361-40A9-8B75-1297D9919C75</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6E368872-EC51-40AF-ADE1-0700EFC4CD51</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>34CA95AC-40BB-4A08-AD5C-1E65C9912032</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Ricardo Sampayo</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Sorted Strings</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>A5CD6C9C-6361-40A9-8B75-1297D9919C75</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>sortl</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Sorted String</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6E368872-EC51-40AF-ADE1-0700EFC4CD51</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+
+def sort_lines(value):
+    values = sorted(value.split("\n"), key=lambda s: s.lower())
+    return "\n".join(values)
+
+def value_clipboard():
+    from subprocess import check_output
+    return check_output(["/usr/bin/pbpaste"])
+
+query = sys.argv[1] if len(sys.argv) &gt; 1 else value_clipboard()
+value = sort_lines(query)
+sys.stdout.write(value)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>34CA95AC-40BB-4A08-AD5C-1E65C9912032</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>adsa</string>
+	<key>uidata</key>
+	<dict>
+		<key>34CA95AC-40BB-4A08-AD5C-1E65C9912032</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+		<key>6E368872-EC51-40AF-ADE1-0700EFC4CD51</key>
+		<dict>
+			<key>xpos</key>
+			<integer>70</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+		<key>A5CD6C9C-6361-40A9-8B75-1297D9919C75</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://ricardosampayo.com</string>
+</dict>
+</plist>
