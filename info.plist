@@ -33,12 +33,48 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DBBDAA3F-D223-40B7-8848-8B4880B7F44F</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Reverse</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8CA45457-2C9C-4E83-B202-0C381D01547D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DBBDAA3F-D223-40B7-8848-8B4880B7F44F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>CDDB6FC0-364B-4542-ACF1-D41C5E9C189F</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>34CA95AC-40BB-4A08-AD5C-1E65C9912032</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DBBDAA3F-D223-40B7-8848-8B4880B7F44F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A5CD6C9C-6361-40A9-8B75-1297D9919C75</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -92,23 +128,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>A5CD6C9C-6361-40A9-8B75-1297D9919C75</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -144,6 +163,23 @@ sys.stdout.write(value)</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>A5CD6C9C-6361-40A9-8B75-1297D9919C75</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>keyword</key>
@@ -162,6 +198,72 @@ sys.stdout.write(value)</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>import sys
+
+def sort_lines(value):
+    values = sorted(value.split("\n"), key=lambda s: s.lower(), reverse=True)
+    return "\n".join(values)
+
+def value_clipboard():
+    from subprocess import check_output
+    return check_output(["/usr/bin/pbpaste"])
+
+query = sys.argv[1] if len(sys.argv) &gt; 1 else value_clipboard()
+value = sort_lines(query)
+sys.stdout.write(value)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DBBDAA3F-D223-40B7-8848-8B4880B7F44F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>8CA45457-2C9C-4E83-B202-0C381D01547D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>adsa</string>
@@ -170,16 +272,23 @@ sys.stdout.write(value)</string>
 		<key>34CA95AC-40BB-4A08-AD5C-1E65C9912032</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>360</integer>
 			<key>ypos</key>
-			<integer>110</integer>
+			<integer>80</integer>
 		</dict>
 		<key>6E368872-EC51-40AF-ADE1-0700EFC4CD51</key>
 		<dict>
 			<key>xpos</key>
 			<integer>130</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>140</integer>
+		</dict>
+		<key>8CA45457-2C9C-4E83-B202-0C381D01547D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>130</integer>
+			<key>ypos</key>
+			<integer>260</integer>
 		</dict>
 		<key>A5CD6C9C-6361-40A9-8B75-1297D9919C75</key>
 		<dict>
@@ -193,7 +302,14 @@ sys.stdout.write(value)</string>
 			<key>xpos</key>
 			<integer>130</integer>
 			<key>ypos</key>
-			<integer>50</integer>
+			<integer>20</integer>
+		</dict>
+		<key>DBBDAA3F-D223-40B7-8848-8B4880B7F44F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>360</integer>
+			<key>ypos</key>
+			<integer>210</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
