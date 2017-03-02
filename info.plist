@@ -34,6 +34,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>CDDB6FC0-364B-4542-ACF1-D41C5E9C189F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>34CA95AC-40BB-4A08-AD5C-1E65C9912032</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Ricardo Sampayo</string>
@@ -45,6 +58,37 @@
 	<string>Sorted Strings</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>CDDB6FC0-364B-4542-ACF1-D41C5E9C189F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -61,27 +105,6 @@
 			<string>A5CD6C9C-6361-40A9-8B75-1297D9919C75</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>keyword</key>
-				<string>sortl</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Sorted String</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>6E368872-EC51-40AF-ADE1-0700EFC4CD51</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -118,6 +141,27 @@ sys.stdout.write(value)</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>sortl</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Sorted String</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6E368872-EC51-40AF-ADE1-0700EFC4CD51</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>adsa</string>
@@ -126,23 +170,30 @@ sys.stdout.write(value)</string>
 		<key>34CA95AC-40BB-4A08-AD5C-1E65C9912032</key>
 		<dict>
 			<key>xpos</key>
-			<integer>280</integer>
+			<integer>340</integer>
 			<key>ypos</key>
-			<integer>80</integer>
+			<integer>110</integer>
 		</dict>
 		<key>6E368872-EC51-40AF-ADE1-0700EFC4CD51</key>
 		<dict>
 			<key>xpos</key>
-			<integer>70</integer>
+			<integer>130</integer>
 			<key>ypos</key>
-			<integer>80</integer>
+			<integer>180</integer>
 		</dict>
 		<key>A5CD6C9C-6361-40A9-8B75-1297D9919C75</key>
 		<dict>
 			<key>xpos</key>
-			<integer>490</integer>
+			<integer>550</integer>
 			<key>ypos</key>
-			<integer>80</integer>
+			<integer>110</integer>
+		</dict>
+		<key>CDDB6FC0-364B-4542-ACF1-D41C5E9C189F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>130</integer>
+			<key>ypos</key>
+			<integer>50</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
